@@ -144,7 +144,7 @@ const DIARY=[
 ];
 let diaryIndex=0;
 function diaryView(){const d=DIARY[diaryIndex];return `<div class="box" style="background:#1a1713;border-color:#6a5a40;line-height:1.9"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b>${d.name}</b><button class="b" data-diary-refresh>↻ 刷新日記</button></div><hr style="border-color:#6a5a40"><div style="white-space:pre-wrap">${d.body}</div><div style="color:#a99b7c;font-size:11px;margin-top:12px;text-align:right">${diaryIndex+1} / ${DIARY.length}</div></div>`}
-const F={n:diaryView(),p:`<div class="box" style="background:#1a1713;border-color:#6a5a40"><b>unfinished_01.png</b><div style="height:170px;margin-top:6px;background:#0f0d0a;border:1px dashed #6a5a40"></div></div>`,d:`<div style="margin:8px 0;background:#c0c0c0;color:#000;border:2px outset #fff;font-family:Tahoma,sans-serif"><div class="tb" style="background:#800000"><span>do_not_delete</span><span>×</span></div><div style="padding:10px">⛔ <b>DIRECTORY · UNKNOWN SIZE</b><br>ACCESS DENIED.<br>You don't have permission to access this directory.<br>請聯絡管理員。</div></div>`,m:`<div class="box" style="background:#1a1713;border-color:#6a5a40"><b>miscellaneous/</b><hr style="border-color:#6a5a40"><p style="color:#a99b7c">各種尚未分類的東西。<br>（暫時先放在這裡。）</p><div style="line-height:2.1"><a data-mf="shopping" style="color:#e8c070">📄 shopping_list.txt</a><br><a data-mf="found" style="color:#e8c070">📄 things_i_found.txt</a><br><a data-mf="untitled" style="color:#e8c070">📄 untitled.txt</a><br><a data-mf="exe" style="color:#e8c070">⚙ why_is_this_here.exe</a><br><a data-mf="forget" style="color:#e8c070">📄 do_not_forget.txt</a></div></div>`};
+const F={n:diaryView(),p:`<div class="box" style="background:#1a1713;border-color:#6a5a40"><b>unfinished_01.png</b><div style="height:170px;margin-top:6px;background:#0f0d0a;border:1px dashed #6a5a40"></div></div>`,d:`<div style="margin:8px 0;background:#c0c0c0;color:#000;border:2px outset #fff;font-family:Tahoma,sans-serif"><div class="tb" style="background:#800000"><span>do_not_delete</span><span>×</span></div><div style="padding:10px">⛔ <b>DIRECTORY · UNKNOWN SIZE</b><br>ACCESS DENIED.<br>You don't have permission to access this directory.<br>請聯絡管理員。<hr><b>請輸入密碼：</b><br><input id=wbpw type=text autocomplete=off spellcheck=false style='width:150px;font:13px Tahoma,sans-serif;margin-top:4px'> <button data-wb=pw style='font:13px Tahoma,sans-serif'>OK</button><div id=wbm style='color:#800000;min-height:18px'></div></div></div>`,m:`<div class="box" style="background:#1a1713;border-color:#6a5a40"><b>miscellaneous/</b><hr style="border-color:#6a5a40"><p style="color:#a99b7c">各種尚未分類的東西。<br>（暫時先放在這裡。）</p><div style="line-height:2.1"><a data-mf="shopping" style="color:#e8c070">📄 shopping_list.txt</a><br><a data-mf="found" style="color:#e8c070">📄 things_i_found.txt</a><br><a data-mf="untitled" style="color:#e8c070">📄 untitled.txt</a><br><a data-mf="exe" style="color:#e8c070">⚙ why_is_this_here.exe</a><br><a data-mf="forget" style="color:#e8c070">📄 do_not_forget.txt</a></div></div>`};
 const A=[];D.forEach((d,x)=>d.s.forEach((s,y)=>{s.d=x;s.k=y;A.push(s)}));
 const GB=[['xX_Star_Xx','路過～你的網站好漂亮！記得回我 :)'],['無名氏','電梯到 −1 樓之後我就沒有再回來。有人看到嗎'],['mochi_1999','Under construction 什麼時候好？？'],['（空白）',''],['管理員','請勿在留言簿留下真名。']];
 let H=[],I=-1;
@@ -156,19 +156,19 @@ function view(r){
  if(r=='home')return homeH();if(r=='explore'||r=='archive')return expH();if(p[0]=='d')return domH(+p[1]);
  if(r=='x:ff')return ffH();if(r=='x:wn')return wnH();if(r=='x:cs')return csH();if(r=='x:hs')return hsH();if(r=='x:f0')return f0H();if(r=='x:hp')return hlpH();
  if(r=='x:rr')return rrH();
- if(r=='x:gp')return `<div class="site" style="background:#2b2620;color:#d8cfb8;font-family:'Courier New',monospace;border:4px inset #6a5a40"><h1 style="letter-spacing:2px">GRANDPA’S WORKSHOP</h1><p>WELCOME BACK.</p><p>這裡好像還有一些東西沒有整理完。</p><p>最後修改時間：UNKNOWN<br>資料夾：02　檔案：02</p><div>━━━━━━━━━━━━━━</div><p><b>[ FILES &amp; FOLDERS ]</b></p><p><a data-f="diary" style="color:#e8c070">📁 diary/</a><br><a data-f="p" style="color:#e8c070">🖼 unfinished_01.png</a><br><a data-f="d" style="color:#e8c070">🔒 do_not_delete</a><br><a data-f="m" style="color:#e8c070">📁 miscellaneous/</a></p><div>━━━━━━━━━━━━━━</div><p>PLEASE DO NOT DELETE ANYTHING.</p><p>……應該沒問題吧？</p><div>━━━━━━━━━━━━━━</div><div id="fv"></div></div>`;
+ if(r=='x:gp')return `<div class="site" style="background:#2b2620;color:#d8cfb8;font-family:'Courier New',monospace;border:4px inset #6a5a40"><h1 style="letter-spacing:2px">MY WORKSHOP</h1><p>WELCOME BACK.</p><p>這裡好像還有一些東西沒有整理完。</p><p>最後修改時間：UNKNOWN<br>資料夾：02　檔案：02</p><div>━━━━━━━━━━━━━━</div><p><b>[ FILES &amp; FOLDERS ]</b></p><p><a data-f="diary" style="color:#e8c070">📁 diary/</a><br><a data-f="p" style="color:#e8c070">🖼 unfinished_01.png</a><br><a data-f="d" style="color:#e8c070">🔒 do_not_delete</a><br><a data-f="m" style="color:#e8c070">📁 miscellaneous/</a></p><div>━━━━━━━━━━━━━━</div><p>PLEASE DO NOT DELETE ANYTHING.</p><p>……應該沒問題吧？</p><div>━━━━━━━━━━━━━━</div><div id="fv"></div></div>`;
+ if(r=='x:wb')return `<style>.wbb{animation:wbq 1.8s ease-in-out infinite}@keyframes wbq{50%{opacity:.55}}@keyframes wbp{from{opacity:0;transform:translateY(12px) scale(.97)}}.wbp{animation:wbp .6s both}</style><div class="site" style="background:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27260%27 height=%27170%27 viewBox=%270 0 260 170%27%3E%0A%3Cg fill=%27%23fff%27 fill-opacity=%27.8%27%3E%0A%3Cg transform=%27translate%2818%2C22%29%27%3E%3Ccircle cx=%2720%27 cy=%2722%27 r=%2714%27/%3E%3Ccircle cx=%2738%27 cy=%2714%27 r=%2717%27/%3E%3Ccircle cx=%2758%27 cy=%2722%27 r=%2713%27/%3E%3Crect x=%278%27 y=%2722%27 width=%2758%27 height=%2714%27 rx=%277%27/%3E%3C/g%3E%0A%3Cg transform=%27translate%28150%2C92%29%27%3E%3Ccircle cx=%2720%27 cy=%2722%27 r=%2715%27/%3E%3Ccircle cx=%2740%27 cy=%2713%27 r=%2719%27/%3E%3Ccircle cx=%2762%27 cy=%2723%27 r=%2714%27/%3E%3Crect x=%276%27 y=%2722%27 width=%2768%27 height=%2715%27 rx=%277.5%27/%3E%0A%3Cg fill=%27%235a4a42%27 fill-opacity=%27.55%27%3E%3Ccircle cx=%2730%27 cy=%2726%27 r=%272%27/%3E%3Ccircle cx=%2750%27 cy=%2726%27 r=%272%27/%3E%3C/g%3E%3Cg fill=%27%23ffb3c6%27 fill-opacity=%27.7%27%3E%3Cellipse cx=%2724%27 cy=%2731%27 rx=%274%27 ry=%272.5%27/%3E%3Cellipse cx=%2756%27 cy=%2731%27 rx=%274%27 ry=%272.5%27/%3E%3C/g%3E%3C/g%3E%0A%3C/g%3E%0A%3Cg fill=%27%23fff%27 fill-opacity=%27.9%27%3E%3Cpath d=%27M215 20l2 6 6 2-6 2-2 6-2-6-6-2 6-2z%27/%3E%3Cpath d=%27M100 110l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z%27/%3E%3C/g%3E%0A%3C/svg%3E"),linear-gradient(#bfe8f4,#e6f7fb 60%,#f6fcfd);font-family:'Comic Sans MS','Chalkboard SE','Courier New',monospace;color:#5a4a42;border:0;padding:16px 12px 26px"><div style="max-width:580px;margin:0 auto"><div class="wbp"><svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;border-radius:24px;border:6px solid #fff;box-shadow:0 5px 0 #f4c6d2,0 10px 22px #5aa3b855;background:#fff"><style>.cl1{animation:wbd 7s ease-in-out infinite alternate}.cl2{animation:wbd 9s ease-in-out infinite alternate-reverse}@keyframes wbd{from{transform:translateX(-6px)}to{transform:translateX(8px)}}.hr{animation:wbf 3s ease-in-out infinite}.hr2{animation:wbf 3.8s ease-in-out infinite .6s}@keyframes wbf{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}.tw{animation:wbt 2s ease-in-out infinite}@keyframes wbt{0%,100%{opacity:1}50%{opacity:.25}}.cur{animation:wbt 1s steps(2) infinite}</style><defs><linearGradient id="wbsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4aaeee"/><stop offset="1" stop-color="#9fdcfa"/></linearGradient><linearGradient id="wbwall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff7de"/><stop offset="1" stop-color="#fdecd0"/></linearGradient><linearGradient id="wbfl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7dcb4"/><stop offset="1" stop-color="#fbeccf"/></linearGradient><linearGradient id="wbscr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd6ff"/><stop offset="1" stop-color="#d2f0ff"/></linearGradient><clipPath id="wbwin"><rect x="271" y="106" width="68" height="58" rx="5"/></clipPath></defs><rect width="400" height="300" fill="url(#wbwall)"/><rect y="212" width="400" height="88" fill="url(#wbfl)"/><rect y="206" width="400" height="9" fill="#f9d4dc"/><path d="M0 0H400V70Q362 92 318 72T232 78T148 70T66 80T0 74Z" fill="url(#wbsky)"/><g fill="#8fd0f3" transform="translate(0,4)"><g transform='translate(56,38) scale(1.05)'><g class='cl1'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g><g transform='translate(196,32) scale(1.4)'><g class='cl2'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g><g transform='translate(326,42) scale(1.05)'><g class='cl1'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g></g><g fill="#fff"><g transform='translate(56,38) scale(1.05)'><g class='cl1'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g><g transform='translate(196,32) scale(1.4)'><g class='cl2'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g><g transform='translate(326,42) scale(1.05)'><g class='cl1'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g></g><g fill="#ffe27a" class="tw"><path d="M120 18l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/><path d="M262 12l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z"/></g><rect x="38" y="92" width="66" height="116" rx="9" fill="#fff" stroke="#efe2c8" stroke-width="3"/><rect x="48" y="102" width="46" height="40" rx="6" fill="none" stroke="#efe2c8" stroke-width="2.5"/><rect x="48" y="150" width="46" height="46" rx="6" fill="none" stroke="#efe2c8" stroke-width="2.5"/><circle cx="96" cy="158" r="4" fill="#ffc2d0" stroke="#f08fa6"/><path class="hr" d="M71 118c-8-8-18 2-8 10l8 7 8-7c10-8 0-18-8-10z" fill="#ffb3c6" style="transform-origin:71px 126px"/><rect x="266" y="101" width="78" height="68" rx="9" fill="#fff" stroke="#efe2c8" stroke-width="2"/><g clip-path="url(#wbwin)"><rect x="271" y="106" width="68" height="58" fill="url(#wbsky)"/><ellipse cx="290" cy="170" rx="34" ry="16" fill="#a5dc70"/><ellipse cx="330" cy="172" rx="30" ry="14" fill="#8fd062"/><g fill="#fff"><g transform='translate(288,124) scale(0.7)'><g class='cl2'><circle cx='0' cy='0' r='9'/><circle cx='13' cy='-5' r='12'/><circle cx='28' cy='0' r='9'/><rect x='-9' y='0' width='46' height='9' rx='4.5'/></g></g></g></g><rect x="302" y="106" width="4" height="58" fill="#fff"/><rect x="271" y="133" width="68" height="4" fill="#fff"/><rect x="266" y="169" width="78" height="7" rx="3.5" fill="#fff" stroke="#efe2c8"/><text x="185" y="136" text-anchor="middle" font-family="Courier New,monospace" font-size="15" font-weight="bold" fill="#ee6a6a">Welcome back!</text><path class="hr2" d="M231 124c-3-3-7 1-3 4l3 3 3-3c4-3 0-7-3-4z" fill="#ff9fb6" style="transform-origin:231px 128px"/><ellipse cx="190" cy="236" rx="62" ry="7" fill="#e9cfa0" fill-opacity=".5"/><rect x="143" y="152" width="72" height="58" rx="13" fill="#f6ecd4" stroke="#decea8" stroke-width="2"/><rect x="151" y="160" width="56" height="42" rx="8" fill="url(#wbscr)" stroke="#bfe0f0" stroke-width="2"/><ellipse cx="170" cy="177" rx="3" ry="4" fill="#4a5a70"/><ellipse cx="190" cy="177" rx="3" ry="4" fill="#4a5a70"/><ellipse cx="163" cy="186" rx="5" ry="3" fill="#ffb3c6" fill-opacity=".8"/><ellipse cx="197" cy="186" rx="5" ry="3" fill="#ffb3c6" fill-opacity=".8"/><path d="M173 185q7 7 14 0" fill="none" stroke="#4a5a70" stroke-width="2.4" stroke-linecap="round"/><rect class="cur" x="196" y="194" width="6" height="2.5" fill="#4a5a70"/><rect x="168" y="210" width="24" height="7" rx="3" fill="#ecdfc0"/><rect x="144" y="222" width="72" height="13" rx="5" fill="#f1e5c8" stroke="#decea8"/><g fill="#d9c9a4"><rect x="150" y="226" width="5" height="3.5" rx="1"/><rect x="158" y="226" width="5" height="3.5" rx="1"/><rect x="166" y="226" width="5" height="3.5" rx="1"/><rect x="174" y="226" width="5" height="3.5" rx="1"/><rect x="182" y="226" width="5" height="3.5" rx="1"/><rect x="190" y="226" width="5" height="3.5" rx="1"/><rect x="198" y="226" width="5" height="3.5" rx="1"/><rect x="206" y="226" width="5" height="3.5" rx="1"/></g><rect x="224" y="158" width="32" height="54" rx="8" fill="#f3e8cc" stroke="#decea8" stroke-width="2"/><rect x="230" y="168" width="20" height="3" rx="1.5" fill="#d9c9a4"/><rect x="230" y="176" width="20" height="3" rx="1.5" fill="#d9c9a4"/><circle cx="240" cy="198" r="3" fill="#8be08b"/><g fill="#f08a3c"><rect x="324" y="204" width="6" height="40" rx="2" fill="#dd7a2c"/><rect x="362" y="204" width="6" height="40" rx="2" fill="#dd7a2c"/><rect x="321" y="190" width="50" height="14" rx="5"/><rect x="328" y="142" width="38" height="46" rx="7"/></g><g stroke="#fbd0a0" stroke-width="2.2" stroke-linecap="round"><path d="M336 148v34M347 148v34M358 148v34"/></g><g class="hr" style="transform-origin:380px 120px" fill="#ffb3c6"><path d="M374 112c-4-4-9 1-4 5l4 4 4-4c5-4 0-9-4-5z"/></g><g class="hr2" style="transform-origin:30px 70px" fill="#ffd36e"><path d="M28 66l1.6 4.4 4.4 1.6-4.4 1.6-1.6 4.4-1.6-4.4-4.4-1.6 4.4-1.6z"/></g></svg></div><h1 class="wbp" style="animation-delay:.12s;color:#ee6a6a;letter-spacing:3px;text-align:center;margin:18px 0 18px;font-size:24px;text-shadow:2px 2px 0 #fff,4px 4px 0 #ffd3dc"><span style="color:#9ed8ee;font-size:20px">☁</span> WELCOME BACK/ <span style="color:#9ed8ee;font-size:20px">☁</span></h1><div class="wbp" style="animation-delay:.24s;position:relative;background:#fffaf0;border:3px dashed #f6b3c4;border-radius:24px;box-shadow:0 5px 0 #f4cdd8,0 12px 22px #5aa3b84d;padding:20px 20px 16px;line-height:2;font-size:14.5px"><span style="position:absolute;top:-15px;left:22px;background:#ffd6e0;color:#e2557a;border:3px solid #fff;border-radius:999px;padding:0 11px;font-size:13px;line-height:24px;box-shadow:0 2px 0 #0001">♡</span><span style="position:absolute;top:-15px;right:22px;background:#fff3b8;color:#e0a000;border:3px solid #fff;border-radius:999px;padding:0 11px;font-size:13px;line-height:24px;box-shadow:0 2px 0 #0001">✧</span><p style="margin:0 0 14px">好久不見！<br>你似乎花了不少時間，才找到這裡。</p><p style="margin:0 0 14px">你看過那些舊資料了嗎？<br>那些信件、研究紀錄，還有始終沒有完成的草案。<br>說起來，我也很久沒有好好整理這裡了。<br>有時候會覺得，自己做了這麼多網站、建立了這麼多空間，卻不知道究竟有多少人真的來過。<br>不過，既然你已經找到這裡了……</p><p style="margin:0"><b style="background:linear-gradient(transparent 58%,#ffd1dc 58%);color:#d4416a;font-size:15.5px">那麼，這趟旅程還算有點收穫吧！</b></p></div><div class="wbp" style="animation-delay:.36s;position:relative;background:#fffaf0;border:3px dashed #f6b3c4;border-radius:24px;box-shadow:0 5px 0 #f4cdd8,0 12px 22px #5aa3b84d;padding:20px 20px 16px;line-height:2;font-size:14.5px;margin-top:24px;text-align:center;background:#edf8ff;border-color:#9fd3ee;box-shadow:0 5px 0 #c3e3f3,0 12px 22px #5aa3b84d"><span style="position:absolute;top:-15px;left:50%;margin-left:-20px;background:#d6efff;color:#4a9cc8;border:3px solid #fff;border-radius:999px;padding:0 11px;font-size:13px;line-height:24px;box-shadow:0 2px 0 #0001">☁</span><div style="font-size:17px;font-weight:bold;color:#4a6a80;margin-top:2px">我是否能讓你為我一直停留目光？</div><div style="margin-top:4px;color:#ee6a6a">— rainbow_000</div></div><div class="wbp" style="animation-delay:.5s;text-align:center;margin-top:26px"><div style="display:inline-block;background:#ffe5ec;border:4px solid #fff;border-radius:26px;box-shadow:0 4px 0 #f4cdd8,0 10px 20px #5aa3b84d;padding:10px 22px;color:#ee6a6a;font-size:17px;line-height:1.7"><b class="wbb">!!!THANK YOU FOR VISITING<br>PLEASE COME AGAIN!!!</b></div><div style="margin-top:12px;color:#f59ab4;font-size:18px;letter-spacing:8px">♡ <span style="color:#f2c24a">✧</span> <span style="color:#8fcde6">♡</span> <span style="color:#f2c24a">✧</span> ♡</div></div></div></div>`;
  if(p[0]=='s'){const d=D[p[1]],s=d.s[p[2]],o=d.s.filter(z=>z!=s);const h=R(A);
   return `<div class="site" style="background:${s.bg};color:${s.fg};font-family:${s.f};border:${s.bd}">${s.h||`<div style="font-size:26px;text-align:center">${s.dc}</div><h1>${s.n}</h1><p style="font-size:16px;line-height:1.6">${s.t}</p>`}<div class="mq"><i>${s.u} ✦ ${s.n} ✦ ${d.e}</i></div><p class="fr">友站：${o.map(z=>`<a data-r="s:${z.d}:${z.k}" style="color:inherit">[${z.n}]</a>`).join(' ')} <a data-r="d:${p[1]}" style="color:inherit">[回${d.n}]</a></p><div class="ft">訪客 ${cnt()} ｜ 更新：${1996+(p[1]*3)%4}/0${1+p[2]*3}/1${p[2]} ｜ <span class="bl">🚧 UNDER CONSTRUCTION</span> <a data-r="s:${h.d}:${h.k}" style="color:inherit">·</a></div></div>`}
  if(r=='archive')return `<div class="pt" style="background:#dde"><h1>網域資料庫</h1><input type="text" id="q" placeholder="搜尋編號、網域或網站名稱" style="width:100%"><div id="res" class="box">${sitesList(A)}</div></div>`;
  if(r=='guest')return `<div class="pt" style="background:#fde"><h1>訪客留言簿</h1><div class="box"><input type="text" id="gn" placeholder="暱稱"><br><textarea id="gm" rows=2 style="width:100%" placeholder="留言"></textarea><br><button class="b" id="gs">簽名</button></div><div id="gl">${GB.map(m=>`<div class="gb"><b>${m[0]}</b>：${m[1]||'&nbsp;'}</div>`).join('')}</div></div>`;
  if(r=='news')return `<div class="pt"><h1>官方公告</h1><div class="box"><b>1999/12/30</b> 網域編號系統升級完成。<br><b>1999/12/31</b> 請勿在午夜造訪 301–500 網域。<br><b>2000/01/01</b> <span class="bl">（此公告無法顯示）</span></div></div>`;
  return `<div class="pt" style="text-align:center"><h1>404</h1><p>此網址不存在。或者，它還沒有被發現。</p><a data-r="home">回到首頁</a></div>`}
-function addr(r){const p=r.split(':');return 'wtti://'+(r=='x:ff'?'last-fast-food.wtti':r=='x:wn'?'you-are-the-winner.wtti':r=='x:cs'?'childhood-never-ends.wtti':r=='x:hs'?'guixianghui.wtti/c':r=='x:hp'?'confession-room.wtti/help':r=='x:f0'?'386-building.wtti/0f':r=='x:rr'?'never-gonna.wtti':r=='x:gp'?'grandpa-workshop.wtti':p[0]=='s'?D[p[1]].s[p[2]].u:p[0]=='d'?'domain/'+D[p[1]].id:r)}
+function addr(r){const p=r.split(':');return 'wtti://'+(r=='x:ff'?'last-fast-food.wtti':r=='x:wn'?'you-are-the-winner.wtti':r=='x:cs'?'childhood-never-ends.wtti':r=='x:hs'?'guixianghui.wtti/c':r=='x:hp'?'confession-room.wtti/help':r=='x:f0'?'386-building.wtti/0f':r=='x:rr'?'never-gonna.wtti':r=='x:gp'?'my-workshop.wtti':r=='x:wb'?'my-workshop.wtti/welcome-back':p[0]=='s'?D[p[1]].s[p[2]].u:p[0]=='d'?'domain/'+D[p[1]].id:r)}
 function show(r,ev){$('#pg').classList.remove('nt');const p=r.split(':');$('#pg').innerHTML=view(r);onShow(r);$('#pg').scrollTop=0;$('#ad').value=addr(r);$('#st').textContent='完成 ｜ 已連線至 '+addr(r);
  $('#bk').disabled=I<1;$('#fw').disabled=I>=H.length-1;
- clearTimeout(window.t1);clearTimeout(window.t2);const ti=r=='x:ff'?'THE LAST FAST FOOD':r=='x:wn'?'YOU ARE THE WINNER!':r=='x:cs'?'童心未泯':r=='x:hp'?'你能幫助我嗎？':r=='x:hs'?'歸鄉會':r=='x:f0'?'FLOOR 0':r=='x:rr'?'NEVER GONNA GIVE YOU UP':r=='x:gp'?'GRANDPA’S WORKSHOP':p[0]=='s'?D[p[1]].s[p[2]].n:r=='explore'?'DOMAIN DIRECTORY':p[0]=='d'?D[p[1]].e+' - DOMAIN INDEX':'WELCOME TO INTERNET!';
+ clearTimeout(window.t1);clearTimeout(window.t2);const ti=r=='x:ff'?'THE LAST FAST FOOD':r=='x:wn'?'YOU ARE THE WINNER!':r=='x:cs'?'童心未泯':r=='x:hp'?'你能幫助我嗎？':r=='x:hs'?'歸鄉會':r=='x:f0'?'FLOOR 0':r=='x:rr'?'NEVER GONNA GIVE YOU UP':r=='x:gp'?'MY WORKSHOP':r=='x:wb'?'WELCOME BACK/':p[0]=='s'?D[p[1]].s[p[2]].n:r=='explore'?'DOMAIN DIRECTORY':p[0]=='d'?D[p[1]].e+' - DOMAIN INDEX':'WELCOME TO INTERNET!';
  const st=t=>{$('#ttl').textContent='🌐 '+t+' - WTTI Navigator 3.0';document.title=t};st(ti);
- if(r=='x:gp'){window.t1=setTimeout(()=>{st('MY WORKSHOP');window.t2=setTimeout(()=>st(ti),1600)},4500)}
  if(p[0]!='x'&&p.length>1&&(ev||Math.random()<.4))pop(+p[1])}
 function go(r,push=1){if(r=='random'){const s=R(A);r='s:'+s.d+':'+s.k;push=1;ev=1}else var ev=0;if(push){H=H.slice(0,I+1);H.push(r);I++}show(r,ev)}
 function pop(x){const d=D[x],e=document.createElement('div');e.className='win';e.style.cssText=`background:${d.bg};color:${d.fg};left:${8+Math.random()*30}%;top:${15+Math.random()*40}%`;
@@ -268,7 +268,7 @@ function expH(){
 function qres(v){v=v.trim().toLowerCase();if(!v)return '';const r=[];
  D.forEach((d,i)=>{if((d.id+d.n+d.e).toLowerCase().includes(v))r.push(`▸ <a data-r="d:${i}">${d.id}｜${d.n}</a> <small>${d.e}</small>`)});
  A.forEach(s=>{if((s.n+s.u+D[s.d].n+D[s.d].e).toLowerCase().includes(v))r.push(`▸ <a data-r="s:${s.d}:${s.k}">${s.n}</a> <small>${s.u}</small>`)});
- if(v=='000')r.push(`▸ <a data-r="x:gp">???｜GRANDPA’S WORKSHOP</a> <small>grandpa-workshop.wtti</small>`);
+ if(v=='000')r.push(`▸ <a data-r="x:gp">???｜MY WORKSHOP</a> <small>my-workshop.wtti</small>`);
  return r.length?r.join('<br>'):'查無資料。也許它還沒被發現。'}
 document.addEventListener('input',e=>{if(e.target.id=='q'){const o=$('#res');if(o)o.innerHTML=qres(e.target.value)}});
 document.addEventListener('click',e=>{if(e.target.closest('[data-sq]')){const q=$('#q');if(!q)return;if(q.value.trim()=='000'){go('x:gp');return}$('#res').innerHTML=qres(q.value)||'請輸入搜尋內容。'}});
@@ -757,6 +757,43 @@ const O13=`<b class=pph>[ OLD_RECIPE_013.TXT ]</b>
 <input type=text id=ppw maxlength=8 autocomplete=off spellcheck=false style='width:166px;padding:2px 6px 8px;font:700 18px "Courier New",monospace;letter-spacing:10px;text-transform:uppercase;background:linear-gradient(90deg,#6b4d10 0 12px,#0000 12px 20.8px) 6px calc(100% - 4px)/166.4px 2px no-repeat #fffef9;border:1px solid #cbd3d8'> <button class=ppb data-pp=pw style='display:inline-block;width:auto'>[ ENTER ]</button>
 <div id=ppm style='color:#b91c1c;min-height:22px'></div>${back}`;
 
+const PP14={u:0};
+const G14=O13.replace('[ OLD_RECIPE_013.TXT ]','[ ??? ]').replace('id=ppw ','id=ppw14 ').replace('maxlength=8','maxlength=10').replace('data-pp=pw','data-pp=pw14').replace('id=ppm','id=ppm14').replace('width:166px','width:236px').replace('166.4px','208px');
+const O14=`<b class=pph>[ OLD_RECIPE_014.TXT ]</b>
+
+好久沒更新這裡了。
+最近又在整理以前的東西，結果翻出了這份不知道什麼時候留下來的紀錄。
+說起來，這個網站一開始也只是想放些自己的食譜而已。
+畢竟工作已經夠無聊了，總得有個地方可以隨便放點自己喜歡的東西。
+反正都是自己架的，想怎麼改就怎麼改。
+<hr class=pd>
+<b>PERSONAL NOTE</b>
+最近又和他談到了那個計畫。
+他還是想讓那些節點彼此連接，甚至希望使用者能夠真正走進那些空間。
+
+…….
+
+保存資料、讓人們能夠重新找到它們，這些事情已經足夠困難了。倘若那些空間開始回應使用者，甚至能夠自行產生變化……
+
+我們真的知道自己正在創造什麼嗎？
+<hr class=pd>
+<b>網站管理員備忘錄</b>
+最近重新整理了網站的資料分類。
+原本想把一些舊檔案刪掉，但想了想，還是全部留下來好了。
+畢竟有些東西即使已經不再使用，也不代表它們沒有存在的價值。
+以下是之前使用的資料分類標籤：
+
+BACKUP 備份資料
+RESTORE 復原資料
+PRESERVE 保留原始紀錄
+DELETE 已刪除資料
+<s>CONNECT 連結</s>
+
+<div style="background:#fffef9;border:1px dashed #6b4d10;padding:8px 12px;margin:8px 0;font:13px/1.7 'Courier New',monospace;white-space:pre-wrap">DOCUMENT: 04_草案
+STATUS: UNFINISHED
+
+ACCESS KEY: ████</div>${back}`;
+const O14B=()=>`<button class=ppb data-r='x:pp:o14'>[ ${PP14.u?'OLD_RECIPE_014.TXT':'???'} ]${PP14.u?'':'<br>🔒'}</button>`;
 const ZL=['CONGRATULATIONS.','You found something.','> PASSWORD ACCEPTED.','> DIRECTORY UNLOCKED.','> LOADING ARCHIVED MESSAGE...','&nbsp;','> ENCRYPTION TYPE: CAESAR CIPHER','> SHIFT: UNKNOWN','> MESSAGE STATUS: RECOVERABLE','ENCRYPTED MESSAGE','&nbsp;','<b style="font-size:clamp(18px,5.2vw,28px);letter-spacing:2px"># 【GUR FRPBAQ PBCL ████】</b>','&nbsp;','<span class=bl>[ MESSAGE LOCKED ]</span>','&nbsp;','<a data-r="x:pp" style="font-size:12px;opacity:.7">[ EXIT ]</a>'];
 const ZH=`<div class=ppz>${ZL.map((l,i)=>`<div class=ppl style='animation-delay:${(i*.45).toFixed(2)}s'>${l}</div>`).join('')}</div>`;
 
@@ -793,6 +830,7 @@ a.scx:hover{background:#101c12;border-color:#e4efa0}
 .scbt{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
 .scbt a{border:1px solid #d6e08e;padding:2px 18px;font-size:11px;letter-spacing:2px}.scbt a:hover{background:#d6e08e;color:#0a1200;text-shadow:none}
 .scfo{margin-top:14px;background:#78bfba;color:#092424;font-size:9px;padding:1px 9px;text-shadow:none;letter-spacing:1.5px;display:flex;justify-content:space-between;gap:8px}
+.sc input.s3{width:76px;max-width:26vw;min-width:0;letter-spacing:2px;padding:3px 4px;text-align:center}
 .sc input{width:min(260px,70%);font:15px 'Courier New',monospace;background:#000;color:#d6e08e;border:1px solid #b9c76a;padding:3px 8px;text-transform:uppercase;letter-spacing:3px;outline:0}
 .sc button{font:inherit;font-size:12px;background:none;color:inherit;border:1px solid #d6e08e;padding:2px 12px;cursor:pointer}
 #scm{min-height:28px;color:#ff8a7a;margin-top:6px}
@@ -801,16 +839,16 @@ a.scx:hover{background:#101c12;border-color:#e4efa0}
 const scF=(bk,ti,pa,body)=>`<div class=sc><div class=sct><a class=scb data-r="${bk}">◀ BACK<br>&lt;&lt; RETURN</a><div class=scm><b>THE SECOND COPY</b><div class=scg><span>資料狀態<i>部分回收</i></span><span>原始來源<i>未知</i></span><span>完整性<i>未經驗證</i></span></div></div><div class=scs>SYSTEM<b>RUN</b></div></div><div class=scd>▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒</div><div class=sch><span>${ti}</span><span>${pa}</span></div>${body}<div class=scbt><a data-r="${bk}">[ BACK ]</a><a data-r="x:pp">[ EXIT ]</a></div><div class=scfo><span>ARCHIVE 9881 ｜ READ ONLY</span><span>NODE 07</span></div></div>`;
 const scB=(l,h)=>`<div class=scx><small>${l}</small>${h}</div>`;
 const SCD={
-'1':{n:'01_私人文件',z:'私人文件',a:'personal',f:['l1','l2','d1']},
-'2':{n:'02_研究筆記',z:'研究筆記',a:'research',f:['n1','n2','n3']},
-'3':{n:'03_實驗資料',z:'實驗資料',a:'experimental',f:['t1','t2','t3','v1'],pw:'GENESIS'},
-'4':{n:'04_草案',z:'草案',a:'unfinished',f:['ln','fi'],pw:'UNFINISHED'}};
+'1':{n:'01_私人文件',z:'私人文件',a:'personal',f:['l1','l2','d1','k1']},
+'2':{n:'02_研究筆記',z:'研究筆記',a:'research',f:['n1','n2','n3','x1'],pw:'GENESIS'},
+'3':{n:'03_實驗資料',z:'實驗資料',a:'experimental',f:['t1','t2','t3','v1'],pw:'CERN-WWW-2013'},
+'4':{n:'04_草案',z:'草案',a:'unfinished',f:['ln','fi'],pw:'PRESERVE'}};
 const SCT={
 l1:{n:'信件_001',m:[['寄件者','[Null3]'],['收件者','[PASTA]'],['日期','已遭銷毀']],t:`我想，我們或許真的能做出來！
 
 不是單純把資料存進某個地方，也不是讓人們在需要的時候搜尋它。
 
-如果有一天，原本的持有者已經不在了，至少那些東西還能留下來。
+連結！我們需要讓一切連接起來！
 
 我當然知道，你上次說的這樣系統會變得太龐大。
 
@@ -819,13 +857,11 @@ l1:{n:'信件_001',m:[['寄件者','[Null3]'],['收件者','[PASTA]'],['日期',
 對了，下次再見面時，我會把咖啡錢還你。`,c:`RECOVERED DATA:
 01001110 01001111 01000100 01000101
 SOURCE: UNKNOWN`},
-l2:{n:'信件_002',m:[['寄件者','[PASTA]'],['收件者','[Null3]'],['日期','已遭銷毀']],t:`你似乎真的打算讓每一份資料都擁有自己的位置。
+l2:{n:'信件_002',m:[['寄件者','[PASTA]'],['收件者','[Null3]'],['日期','已遭銷毀']],t:`你似乎真的打算讓每一份資料都搭上關係。
 
 這不只是一個資料庫，而是一個會不斷擴張的空間。
 
 只是我想提醒你，當資料開始彼此連結，我們就很難再控制它們會形成什麼。
-
-你希望人們能夠找到自己遺失的東西。但如果他們找到的東西，早已並不是自己原本想找的呢？
 
 還有，咖啡錢不用還了。
 下次請我吃飯就好。`},
@@ -836,6 +872,26 @@ d1:{n:'私人日記_01',m:[['作者','未知'],['紀錄日期','10-13']],t:`我�
 如果只是建立一個虛擬世界，那麼我們也不需要如此執著於每一份資料的來源。
 
 或許我們從一開始就沒有真正弄清楚自己的目標。`},
+k1:{n:'密鑰',t:`<b class=scbig>TSQIFWV</b>通訊密鑰：請參閱第一筆紀錄`},
+x1:{n:'發現外部參照',t:`外部資料來源：已確認
+
+伺服器名稱：
+[                         ]
+
+原始用途：
+[                         ]
+
+原始年份：
+[                         ]
+
+———————————
+
+資料比對規則：
+
+網址提供來源。
+用途提供識別。
+年份提供時間。
+請依序排列。`},
 n1:{n:'研究筆記_01',t:`研究主題：虛擬空間與資料節點
 
 如果資料能夠彼此連結，那麼是否能進一步建立一個空間，讓使用者直接進入其中？
@@ -853,21 +909,30 @@ n1:{n:'研究筆記_01',t:`研究主題：虛擬空間與資料節點
 ・使用者可以建立自己的節點。
 
 PASTA:「你真的想把整個資料庫做成一座城市嗎？」`},
-n2:{n:'研究筆記_02',t:`［03_實驗資料］通行密碼（已加密）：
-<b class=scbig>TSQIFWV</b>密碼：請參閱第一筆紀錄`},
+n2:{n:'研究筆記_02',t:`關於資料保存的測試：
+
+原始資料即使不再存在於原本的位置，
+仍可能透過其他節點取得。
+
+但我們必須先確認一件事：
+
+一份資料被保存下來，
+是否代表它仍然是原本的那一份？
+
+--------------------------------`,c:`REFERENCE:
+THE FIRST PAGE WAS THE FIRST FILE.
+
+LOCATION: 67 69 82 78`},
 n3:{n:'研究筆記_03',t:`研究主題：資料與使用者
 
-我們已經成功讓不同節點互相連接！
+我們成功了！
 
 但目前的系統仍然只是單向的。使用者進入節點、閱讀內容、離開。
 
 資料不會因為使用者的到來而產生任何變化。
 
 他認為這樣已經足夠。
-可我卻不這麼認為。
-
-研究必須暫時擱置了，
-我們還沒有找到合適的方法。`},
+可我卻不這麼認為。`},
 t1:{n:'測試_001',t:`測試項目：資料保存
 
 測試結果：成功。
@@ -897,8 +962,8 @@ t3:{n:'測試_003',t:`測試項目：使用者進入節點
 備註：
 
 測試者表示：這個空間不像資料庫，比較像是「走進了一個有人生活過的地方」。`},
-v1:{n:'錄音_001',t:`<audio controls preload=auto><source src="${SCW}" type="audio/mpeg"><source src="${SCW2}" type="audio/wav"></audio>`},
-ln:{n:'最後的筆記',t:`我們對於這套系統的未來，似乎有了不同的想法。
+v1:{n:'錄音_001',t:`<audio controls preload=auto><source src="${SCW}" type="audio/mpeg"><source src="${SCW2}" type="audio/wav"></audio><div style="margin-top:10px">For: PP-OR-014</div>`},
+ln:{n:'最後的筆記',m:[['作者','[Null3]']],t:`我們對於這套系統的未來，似乎有了不同的想法。
 
 他認為，保存資訊已經足夠。
 只要能讓人們找到自己留下的東西，這個計畫就有存在的意義。
@@ -913,27 +978,28 @@ ln:{n:'最後的筆記',t:`我們對於這套系統的未來，似乎有了不�
 
 他說這麼做太有風險了
 
-但我還是想試試看`},
-fi:{n:'檔案資訊',t:`檔案名稱： 最後的筆記
-建立時間： █
-最後修改： █
-作者： █
+但我還是想試試看。
+
+……
+
+我不知道那些留下來的資料最後會落到誰手上。
+如果有人真的找到了這裡，希望你能明白：
+<b>這個地方並不是從零開始的。</b>
+有些想法，或許只是被另一個人接著完成了。`},
+fi:{n:'檔案資訊',t:`檔案名稱：最後的筆記
+建立時間：████
+最後修改：████
+作者：████
 
 PROJECT STATUS: SUSPENDED
 
-Null3: UNKNOWN
-
-PAST: UNKNOWN
-
-NEXT DEVELOPMENT: NOT FOUND
-NEXT DEVELOPMENT: NOT FOUND
-NEXT DEVELOPMENT: NOT FOUND
-NEXT DEVELOPMENT: NOT FOUND`,c:`USER ID：rainbow_000
-資料回收完成。
+WELCOME TO INTERNET!`,c:`資料回收完成。
+4 個資料夾／14 份檔案
 所有可辨識的檔案均已成功回收。
-4 個資料夾／12 份檔案
-未發現其他可讀取資料。`}};
-const scGate=k=>scF('x:pp9:u',SCD[k].n,'ACCESS RESTRICTED',`<div class=scbar>🔒 ACCESS RESTRICTED ｜ PASSWORD REQUIRED</div><div class=sctx>&gt; ENTER PASSWORD:\n<input type=text id=scpw data-k=${k} autocomplete=off spellcheck=false> <button data-sc=pw>[ ENTER ]</button><div id=scm></div></div>`);
+RELATED NODE: 000
+THE KEY：rainbow_000`}};
+const S3=`<span style='white-space:nowrap'><input type=text class=s3 id=scpw data-k=3 size=5 maxlength=12 autocomplete=off spellcheck=false> - <input type=text class=s3 size=5 maxlength=12 autocomplete=off spellcheck=false> - <input type=text class=s3 size=5 maxlength=12 autocomplete=off spellcheck=false></span>`;
+const scGate=k=>scF('x:pp9:u',SCD[k].n,'ACCESS RESTRICTED',`<div class=scbar>🔒 ACCESS RESTRICTED ｜ PASSWORD REQUIRED</div><div class=sctx>&gt; ENTER PASSWORD:\n${k=='3'?S3:`<input type=text id=scpw data-k=${k} autocomplete=off spellcheck=false>`} <button data-sc=pw>[ ENTER ]</button><div id=scm></div></div>`);
 const scDir=k=>{const d=SCD[k];if(d.pw&&!SC['u'+k])return scGate(k);return scF('x:pp9:u',d.n,'FOLDER 0'+k,d.f.map((f,i)=>`<a class=scx data-r="x:sc:${k}${'abcde'[i]}"><small>FILE ${String(i+1).padStart(2,'0')}</small><b>［${SCT[f].n}］</b></a>`).join('')+(k=='3'?'':''))};
 const scFile=(k,i)=>{const d=SCD[k];if(d.pw&&!SC['u'+k])return scGate(k);const f=SCT[d.f[i]];return scF('x:sc:'+k,f.n,d.n,(f.m?`<div class=scgm>${f.m.map(m=>scB(m[0],m[1])).join('')}</div>`:'')+scB('CONTENT',`<div class=sctx>${f.t}${f.c?`<pre>${f.c}</pre>`:''}</div>`))};
 const U9=()=>scF('x:pp','RECOVERED DATA','ARCHIVE 9881',`<div class=scgr>${Object.keys(SCD).map(k=>{const d=SCD[k],lk=d.pw&&!SC['u'+k];return `<a class="scx${lk?' lk':''}" data-r="x:sc:${k}"><small>FOLDER 0${k}${lk?' ｜ LOCKED':''}</small><b>［${d.n}］</b>${lk?'<br>（已上鎖）':''}</a>`}).join('')}</div>`);
@@ -943,13 +1009,14 @@ const PAGES={
 'x:pp':()=>`<div class=pp><div class=ppbasil>🌿</div><div class=ppt>🍝 WELCOME TO PASTA PARADISE!!! 🍝</div><div class=ppp>${HOME}</div>${NOTE}${ART}</div>`,
 'x:pp:r':()=>fr('PASTA RECIPES','食譜大全',REC,'x:pp:r'),
 'x:pp:d':()=>fr('KITCHEN DIARY','廚房日記',DIA,'x:pp:d'),
-'x:pp:o':()=>fr('OLD RECIPES','舊食譜',OLD,'x:pp:o'),
+'x:pp:o':()=>fr('OLD RECIPES','舊食譜',OLD+O14B(),'x:pp:o'),
+'x:pp:o14':()=>fr('OLD RECIPES','',PP14.u?O14:G14,'x:pp:o'),
 'x:pp:o1':()=>fr('OLD RECIPES','',O1,'x:pp:o'),
 'x:pp:o2':()=>fr('OLD RECIPES','',O2,'x:pp:o'),
 'x:pp:o3':()=>fr('OLD RECIPES','',O3,'x:pp:o'),
 'x:pp:o13':()=>fr('OLD RECIPES','',O13,'x:pp:o'),
 'x:pp:z':()=>ZH,'x:pp9':L9,'x:pp9:u':U9};
-const AD={'x:pp':'pasta-paradise.wtti','x:pp:r':'pasta-paradise.wtti/recipes','x:pp:d':'pasta-paradise.wtti/diary','x:pp:o':'pasta-paradise.wtti/old','x:pp:o1':'pasta-paradise.wtti/old/001','x:pp:o2':'pasta-paradise.wtti/old/002','x:pp:o3':'pasta-paradise.wtti/old/003','x:pp:o13':'pasta-paradise.wtti/old/013','x:pp:z':'pasta-paradise.wtti/archive/013','x:pp9':'pasta-paradise.wtti/9881','x:pp9:u':'pasta-paradise.wtti/9881/open'};
+const AD={'x:pp':'pasta-paradise.wtti','x:pp:r':'pasta-paradise.wtti/recipes','x:pp:d':'pasta-paradise.wtti/diary','x:pp:o':'pasta-paradise.wtti/old','x:pp:o1':'pasta-paradise.wtti/old/001','x:pp:o2':'pasta-paradise.wtti/old/002','x:pp:o3':'pasta-paradise.wtti/old/003','x:pp:o13':'pasta-paradise.wtti/old/013','x:pp:o14':'pasta-paradise.wtti/old/014','x:pp:z':'pasta-paradise.wtti/archive/013','x:pp9':'pasta-paradise.wtti/9881','x:pp9:u':'pasta-paradise.wtti/9881/open'};
 Object.assign(PAGES,SCP);Object.assign(AD,SCA);
 
 const _v=view,_a=addr,_s=show,_p=parse;
@@ -961,8 +1028,14 @@ show=(r,ev)=>{_s(r,ev);if(PAGES[r]){const t=r=='x:pp:z'?'ARCHIVED MESSAGE':r=='x
 window.ppPw=()=>{const i=$('#ppw');if(!i)return;const k=i.dataset.k=='2',v=i.value.trim().toUpperCase().replace(/\s+/g,' ');if(k?v=='THE SECOND COPY':v=='DUEPOSTI')go(k?'x:pp9:u':'x:pp:z');else{$('#ppm').textContent='ERROR: WRONG PASSWORD.';i.value=''}};
 const _q=qres;qres=v=>v.trim()=='9881'?`▸ <a data-r="x:pp9">🔒 9881｜ACCESS RESTRICTED</a> <small>pasta-paradise.wtti/9881</small>`:v.trim()=='142.444'?`▸ <a data-r="x:pp">🍝 WELCOME TO PASTA PARADISE!!!</a> <small>pasta-paradise.wtti</small>`:_q(v);
 document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='ppw')ppPw()});
-window.scPw=()=>{const i=$('#scpw');if(!i)return;const k=i.dataset.k,v=i.value.trim().toUpperCase();if(v==SCD[k].pw){SC['u'+k]=1;go('x:sc:'+k)}else{$('#scm').textContent='ERROR: WRONG PASSWORD.';i.value=''}};
-document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='scpw')scPw()});
+window.ppPw14=()=>{const i=$('#ppw14');if(!i)return;if(i.value.trim().toUpperCase()=='UNFINISHED'){PP14.u=1;go('x:pp:o14')}else{$('#ppm14').textContent='ERROR: WRONG PASSWORD.';i.value=''}};
+document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='ppw14')ppPw14()});
+document.addEventListener('click',e=>{if(e.target.closest('[data-pp=pw14]'))ppPw14()});
+window.wbPw=()=>{const i=$('#wbpw');if(!i)return;if(i.value.trim().toLowerCase()=='rainbow_000')go('x:wb');else{$('#wbm').textContent='密碼錯誤。';i.value=''}};
+document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='wbpw')wbPw()});
+document.addEventListener('click',e=>{if(e.target.closest('[data-wb=pw]'))wbPw()});
+window.scPw=()=>{const i=$('#scpw');if(!i)return;const k=i.dataset.k,v=(k=='3'?[...document.querySelectorAll('.s3')].map(x=>x.value.trim()).join('-'):i.value.trim()).toUpperCase();if(v==SCD[k].pw){SC['u'+k]=1;go('x:sc:'+k)}else{$('#scm').textContent='ERROR: WRONG PASSWORD.';if(k!='3')i.value=''}};
+document.addEventListener('keydown',e=>{if(e.key=='Enter'&&(e.target.id=='scpw'||e.target.classList.contains('s3')))scPw()});
 document.addEventListener('click',e=>{if(e.target.closest('[data-sc=pw]'))scPw()});
 document.addEventListener('click',e=>{if(e.target.closest('[data-pp=pw]'))ppPw()});
 })();
